@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/25bc89a4e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form id="form">
+        <h1>REGISTRATION</h1>
+        <!--User name-->
+        <div class="single_box">
+          <label>Username</label>
+          <input type="text" placeholder="Username" id="username" />
+          <i class="fas fa-check-circle"> </i
+          ><i class="fas fa-times-circle"></i>
+          <small class="small_class">error message</small>
+        </div>
+        <!--Email-->
+        <div class="single_box">
+          <label>Email</label>
+          <input type="email" placeholder="email" id="Email" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-times-circle"></i>
+          <small class="small_class">error message</small>
+        </div>
+        <!--Phone-->
+        <div class="single_box">
+          <label>Phone Number</label>
+          <input type="number" placeholder="Number" id="phone" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-times-circle"></i>
+          <small class="small_class">error message</small>
+        </div>
+        <!--Password-->
+        <div class="single_box">
+          <label>Password</label>
+          <input type="password" placeholder="Password" id="password" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-times-circle"></i>
+          <small class="small_class">error message</small>
+        </div>
+        <!--Confirm Password-->
+        <div class="single_box">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            placeholder="Type Password again"
+            id="confirm_password"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-times-circle"></i>
+          <small class="small_class">error message</small>
+        </div>
+        <!--Submit-->
+        <div class="submitParent">
+          <input type="submit" name="submit" id="submit" />
+        </div>
+      </form>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        outline: none;
+        font-family: "Rubik", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(
+          to top,
+          #e5d6df,
+          #dfd3de,
+          #d9d0de,
+          #d2cddd,
+          #cacbdb,
+          #c5ccde,
+          #c0cee0,
+          #bad0e1,
+          #b5d6e6,
+          #b1dde8,
+          #afe3e8,
+          #afe9e5
+        );
+      }
+
+      .container {
+        width: 400px;
+        height: 510px;
+        overflow: hidden;
+        border-radius: 30px;
+        background-image: linear-gradient(
+          to bottom,
+          #fbd4fd,
+          #e3c4ea,
+          #ccb4d7,
+          #b5a4c4,
+          #a094b0
+        );
+      }
+
+      .form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+      }
+
+      .single_box {
+        width: 100%;
+        height: 100%;
+        padding: 5px 20px;
+        position: relative;
+        display: flex;
+        flex-flow: column;
+      }
+
+      form#form h1 {
+        padding: 10px;
+        font-size: 25px;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 2px;
+        background: #fbd4fd;
+        color: #1a271a;
+      }
+
+      .single_box label {
+        color: #1a271a;
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: 1px;
+      }
+
+      .single_box input {
+        height: 30px;
+        padding-left: 15px;
+        border-radius: 12px;
+        border: none;
+        background: #fee5ff;
+      }
+
+      input#submit {
+        padding: 6px 28px;
+        font-size: 22px;
+        font-weight: 600;
+        border: 2px solid #b8abc9;
+        border-radius: 20px;
+        letter-spacing: 2px;
+        transition: 0.3s;
+        background: #736b7e;
+        color: #ffffff;
+      }
+
+      input {
+        color: #1a271a;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      .single_box i {
+        top: 29px;
+        right: 20px;
+        position: absolute;
+        visibility: hidden;
+      }
+
+      .single_box small {
+        visibility: hidden;
+      }
+
+      .submitParent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .single_box.success input {
+        border-color: #88ff00;
+      }
+
+      .single_box.error input {
+        border-color: #ff2600;
+      }
+      .single_box.success .fa-check-circle {
+        color: #88ff00;
+        visibility: visible;
+      }
+      .single_box.error .fa-times-circle {
+        color: #ff2600;
+        visibility: visible;
+      }
+      .single_box.error small {
+        visibility: visible;
+        color: #ff2600;
+      }
+
+      #link {
+        display: block;
+      }
+    </style>
+
+    <script>
+      const username = document.getElementById("username");
+      const email = document.getElementById("Email");
+      const phone = document.getElementById("phone");
+      const password = document.getElementById("password");
+      const confirm_password = document.getElementById("confirm_password");
+      const from = document.getElementById("form");
+
+      //username
+      const CheckUsername = (input) => {
+        const value = input.value.trim();
+        const validation = input.parentElement;
+        const smalls = validation.querySelector("small");
+        if (value.length <= 0) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "please choose the username";
+        } else if (value.length >= 1 && value.length < 3) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "username must be at least 3 characters";
+        } else if (value.length >= 3 && value.length < 15) {
+          validation.className = "single_box success";
+        } else {
+          validation.className = "single_box error";
+          smalls.innerHTML = "username not longer than 15 characters";
+        }
+      };
+      // email  check
+      const checkEmail = (input) => {
+        const value = input.value.trim();
+        const validation = input.parentElement;
+        const smalls = validation.querySelector("small");
+        if (value.length < 3) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "please type your email";
+        } else {
+          validation.className = "single_box success";
+        }
+      };
+      //Phone check
+      const checkPhone = (input) => {
+        const value = input.value.trim();
+        const validation = input.parentElement;
+        const smalls = validation.querySelector("small");
+        if (value.length <= 0) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "please enter your phone number";
+        } else if (value.length >= 1 && value.length < 10) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "phone number 11 digits";
+        } else if (value.length > 11) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "phone number 11 digits";
+        } else {
+          validation.className = "single_box success";
+        }
+      };
+      //password check
+      const checkPassword = (input) => {
+        const value = input.value.trim();
+        const validation = input.parentElement;
+        const smalls = validation.querySelector("small");
+        if (value.length <= 0) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "create strong password";
+        } else if (value.length >= 1 && value.length < 8) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "password must be at least 8 characters";
+        } else if (value.length > 16) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "password must be not longer than 16 characters";
+        } else if (input.value !== confirm_password.value) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "password no match";
+        } else {
+          validation.className = "single_box success";
+        }
+      };
+      //check
+      const passwordCheck = (input) => {
+        const value = input.value.trim();
+        const validation = input.parentElement;
+        const smalls = validation.querySelector("small");
+        if (value.length <= 0) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "repeat your password";
+        } else if (value.length >= 1 && value.length < 8) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "password must be at least 8 characters";
+        } else if (value.length > 16) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "password must be not longer than 16 characters";
+        } else if (input.value !== password.value) {
+          validation.className = "single_box error";
+          smalls.innerHTML = "password no match";
+        } else {
+          validation.className = "single_box success";
+        }
+      };
+
+      /*form submit listener */
+      from.addEventListener("submit", (e) => {
+        e.preventDefault();
+        CheckUsername(username);
+        checkEmail(email);
+        checkPhone(phone);
+        checkPassword(password);
+        passwordCheck(confirm_password);
+      });
+    </script>
+  </body>
+</html>
